@@ -8,7 +8,9 @@ print(movies)
 old = movies[:-1, 1:4]
 new = movies[-1, 1:4]
 name = movies[-1, 0]
+# 距离计算
 L = np.sqrt(np.array([np.sum(np.square(old - new), axis=1)],dtype=float).T)
+# 最相似的电影
 K = 5
 top = np.argsort(L[:,0])[0:K]
 print('---------------------------')
