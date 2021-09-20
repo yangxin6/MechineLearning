@@ -40,7 +40,7 @@ dummyY = lb.fit_transform(labelList)
 # Using decision tree for classification
 # clf = tree.DecisionTreeClassifier()
 # entropy
-clf = tree.DecisionTreeClassifier(criterion='entropy')
+clf = tree.DecisionTreeClassifier(criterion='entropy', min_samples_split=4)
 clf = clf.fit(dummyX, dummyY)
 # print("clf: " + str(clf))
 
@@ -72,5 +72,5 @@ print(predictedX)
 predictedY = clf.predict(predictedX)
 print("预测结果: 类别(是否给贷款)", lb.classes_[predictedY][0])
 
-
+# 使用 dot -Tpdf data.dot -o data.pdf 查看 决策树结构
 
